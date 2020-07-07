@@ -37,7 +37,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 .btn {
   background-color: gray;
-  color: white;
+  color: black;
   padding: 15px 20px;
   border: none;
   cursor: pointer;
@@ -122,7 +122,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     <input class="input-field" type="password" placeholder="Password" name="password" required>
   </div>
 
-  <button type="submit" name="submit" class="btn">Login Admin</button>
+  <button type="submit" name="submit" class="btn"><b>Login Admin</b></button>
 </form>
 <div class="footer">
 <center><h5>All Rights By <a href="owner.php">Rahul Biswas</a> 2020 &copy; CopyRight</h5></center>
