@@ -5,6 +5,11 @@
 <link href="style.css" rel="stylesheet" type="text/css">
 <head>
 <style>
+  .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 #customers {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -91,31 +96,10 @@
                 background: white;
                 margin: 150px auto;
                 box-shadow: 0 0 10px;
-                position: relative;
                 margin-top: 1%;
                 margin-bottom: 2%;
             }
-            .box h2{
-                margin: 0;
-                position: absolute;
-                top: 12px;
-                left: -12px;
-                background: #2196F3;
-                color: white;
-                font-size: 20px;
-                padding: 2px 20px;
-            }
-            .box h2:before{
-                content: '';
-                width: 24px;
-                height: 24px;
-                position: absolute;
-                background: #515f66;
-                left: 5px;
-                bottom: -12px;
-                transform: rotate(-45deg);
-                z-index: -1;
-            }
+            
 </style>
 </head>
 <body>
@@ -123,7 +107,7 @@
   <div class="loader"></div>
 
 </div>
-<div class="navbar">
+<div class="navbar" id="mynavbar">
   <a href="dashboard.php"><i class="fab fa-dashcube"></i> Dashboard</a>
   <a href="add.php"><i class="fas fa-user-friends"></i> Employee</a>
   <div class="dropdown">
@@ -131,10 +115,9 @@
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="#">All Leave</a>
-      <a href="#">Approved Leave</a>
-      <a href="#">Pending Leave</a>
-      <a href="#">Not Approved Leave</a>
+      <a href="employee/viewleaveonly.php">All Leave</a>
+      <a href="employee/viewleave.php">Action Leave</a>
+      <a href="searchleave.php">Search Leave</a>
     </div>
   </div> 
   <a href="profile.php"><i class="fas fa-address-book"></i> My Profile</a>
@@ -209,6 +192,19 @@ setTimeout(function(){
 },1500);
 
   </script>
+  <script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("mynavbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}</script>
 </div>
 </body>
 </html>
